@@ -1,7 +1,8 @@
 import { Link, useLocation } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { useAuth } from '@/context/AuthContext';
-import { Hotel, Menu, X, User, LogOut } from 'lucide-react';
+import { useUserRole } from '@/hooks/useUserRole';
+import { Hotel, Menu, X, User, LogOut, Shield } from 'lucide-react';
 import { useState } from 'react';
 import {
   DropdownMenu,
