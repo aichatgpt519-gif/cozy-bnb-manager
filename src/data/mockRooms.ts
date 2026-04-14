@@ -1,7 +1,11 @@
-import roomDeluxe from '@/assets/room-deluxe.jpg';
-import roomSuite from '@/assets/room-suite.jpg';
-import roomStandard from '@/assets/room-standard.jpg';
 import type { Room } from '@/types/hotel';
+
+const ROOM_IMAGES = {
+  standard: 'https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=800&q=80',
+  deluxe: 'https://images.unsplash.com/photo-1618773928121-c32242e63f39?w=800&q=80',
+  suite: 'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=800&q=80',
+  penthouse: 'https://images.unsplash.com/photo-1590490360182-c33d57733427?w=800&q=80',
+};
 
 export const mockRooms: Room[] = [
   {
@@ -12,7 +16,7 @@ export const mockRooms: Room[] = [
     type: 'standard',
     capacity: 2,
     amenities: ['Wi-Fi', 'TV', 'Air Conditioning', 'Mini Bar'],
-    images: [roomStandard],
+    images: [ROOM_IMAGES.standard],
     availability: true,
     rating: 4.2,
   },
@@ -24,7 +28,7 @@ export const mockRooms: Room[] = [
     type: 'deluxe',
     capacity: 2,
     amenities: ['Wi-Fi', 'TV', 'Air Conditioning', 'Mini Bar', 'City View', 'Room Service'],
-    images: [roomDeluxe],
+    images: [ROOM_IMAGES.deluxe],
     availability: true,
     rating: 4.6,
   },
@@ -36,7 +40,7 @@ export const mockRooms: Room[] = [
     type: 'suite',
     capacity: 3,
     amenities: ['Wi-Fi', 'TV', 'Air Conditioning', 'Mini Bar', 'City View', 'Room Service', 'Jacuzzi', 'Lounge Access'],
-    images: [roomSuite],
+    images: [ROOM_IMAGES.suite],
     availability: true,
     rating: 4.8,
   },
@@ -48,7 +52,7 @@ export const mockRooms: Room[] = [
     type: 'penthouse',
     capacity: 4,
     amenities: ['Wi-Fi', 'TV', 'Air Conditioning', 'Mini Bar', 'Panoramic View', 'Butler Service', 'Jacuzzi', 'Private Terrace'],
-    images: [roomSuite],
+    images: [ROOM_IMAGES.penthouse],
     availability: false,
     rating: 4.9,
   },
@@ -60,7 +64,7 @@ export const mockRooms: Room[] = [
     type: 'deluxe',
     capacity: 2,
     amenities: ['Wi-Fi', 'TV', 'Air Conditioning', 'Mini Bar', 'Garden View'],
-    images: [roomDeluxe],
+    images: [ROOM_IMAGES.deluxe],
     availability: true,
     rating: 4.4,
   },
@@ -72,7 +76,7 @@ export const mockRooms: Room[] = [
     type: 'standard',
     capacity: 1,
     amenities: ['Wi-Fi', 'TV', 'Air Conditioning'],
-    images: [roomStandard],
+    images: [ROOM_IMAGES.standard],
     availability: true,
     rating: 4.0,
   },
