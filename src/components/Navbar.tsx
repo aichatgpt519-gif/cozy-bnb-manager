@@ -13,6 +13,7 @@ import {
 
 export default function Navbar() {
   const { user, signOut } = useAuth();
+  const { isAdmin } = useUserRole();
   const [mobileOpen, setMobileOpen] = useState(false);
   const location = useLocation();
 
