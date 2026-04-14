@@ -55,7 +55,7 @@ export default function Navbar() {
               </DropdownMenuTrigger>
               <DropdownMenuContent align="end">
                 <DropdownMenuItem asChild>
-                  <Link to="/dashboard">My Dashboard</Link>
+                  <Link to="/dashboard">{isAdmin ? '⚙️ Admin Panel' : 'My Dashboard'}</Link>
                 </DropdownMenuItem>
                 <DropdownMenuItem onClick={() => signOut()}>
                   <LogOut className="mr-2 h-4 w-4" /> Sign Out
