@@ -1,7 +1,8 @@
 import { Link, useLocation } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { useAuth } from '@/context/AuthContext';
-import { Hotel, Menu, X, User, LogOut } from 'lucide-react';
+import { useUserRole } from '@/hooks/useUserRole';
+import { Hotel, Menu, X, User, LogOut, Shield } from 'lucide-react';
 import { useState } from 'react';
 import {
   DropdownMenu,
@@ -12,6 +13,7 @@ import {
 
 export default function Navbar() {
   const { user, signOut } = useAuth();
+  const { isAdmin } = useUserRole();
   const [mobileOpen, setMobileOpen] = useState(false);
   const location = useLocation();
 
@@ -53,7 +55,7 @@ export default function Navbar() {
               </DropdownMenuTrigger>
               <DropdownMenuContent align="end">
                 <DropdownMenuItem asChild>
-                  <Link to="/dashboard">My Dashboard</Link>
+                  <Link to="/dashboard">{isAdmin ? '⚙️ Admin Panel' : 'My Dashboard'}</Link>
                 </DropdownMenuItem>
                 <DropdownMenuItem onClick={() => signOut()}>
                   <LogOut className="mr-2 h-4 w-4" /> Sign Out
